@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.smbms.dao.provider.ProviderMapper">
+
+    <!--获得providerList供应商列表-->
+    <select id="getProviderList" resultType="Provider">
+        select * from smbms_provider
+    </select>
+
+    <!--获得供应商列表:实现分页-->
+    <select id="getProviderList_Page" resultType="Provider">
+        SELECT * FROM smbms_provider
+        <where>
+            <if test="proCode!=null and proCode!=''">
+                proCode LIKE CONCAT('%',#{proCode},'%')
+            </if>
+            <if test="proName!=null and proName!=''">
+                AND proName LIKE CONCAT('%',#{proName},'%')
+            </if>
+        </where>
+        ORDER BY creationDate DESC
+        LIMIT #{from},#{pageSize};
+    </select>
+
+    <!--通过供应商编码和供应商名称获得总记录数-->
+    <select id="getProviderCount" resultType="int">
+        select count(1) from smbms_provider
+        <where>
+            <if test="proCode !=null and proCode !='' ">
+                  proCode LIKE CONCAT('%',#{proCode},'%')
+            </if>
+            <if test="proName !=null and proName !='' ">
+                AND  proName LIKE CONCAT('%',#{proName},'%')
+            </if>
+        </where>
+    </select>
+
+    <!--提交添加供应商的表单-->
+    <insert id="addProvider" parameterType="Provider">
+        insert into smbms_provider(proCode,proName,proContact,proPhone,proAddress,proFax,proDesc,createdBy,creationDate)
+        values(#{proCode},#{proName},#{proContact},#{proPhone},#{proAddress},#{proFax},#{proDesc},#{createdBy},#{creationDate})
+    </insert>
+
+    <!--通过id实现供应商查询功能-->
+    <select id="getProviderById" parameterType="Integer" resultType="Provider">
+        select * from smbms_provider
+        where id=#{id}
+    </select>
+
+    <!--提交修改的表单-->
+    <update id="saveModifyProvider" parameterType="Provider">
+        UPDATE smbms_provider
+        SET proName=#{proName},proContact=#{proContact},proPhone=#{proPhone},proAddress=#{proAddress},proFax=#{proFax},proDesc=#{proDesc},modifyDate=#{modifyDate},modifyBy=#{modifyBy}
+        WHERE id=#{id}
+    </update>
+
+    <!--根据id删除供应商-->
+    <delete id="deleteProviderById" parameterType="Integer" >
+        delete from smbms_provider
+        where id = #{id}
+    </delete>
+</mapper>

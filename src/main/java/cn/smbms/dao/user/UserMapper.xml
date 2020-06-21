@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.smbms.dao.user.UserMapper">
+
+
+    <!--登陆 第二种写法-->
+    <select id="getLoinUser" parameterType="string" resultType="User">
+        select * from smbms_user where userCode=#{userCode}
+    </select>
+
+    <!--获得用户列表-->
+    <select id="getUserList" resultMap="rm1">
+        select u.* ,r.roleName from smbms_user u,smbms_role r where u.userRole =r.id
+
+    </select>
+
+    <!--分页查询获得用户列表-->
+    <select id="getUserList_page"  resultMap="rm1">
+        SELECT u.* ,r.`roleName`
+        FROM smbms_user u,smbms_role r
+        WHERE u.`userRole`=r.`id`
+        <if test="userName!=null and userName!=''">
+            AND u.`userName` LIKE CONCAT('%',#{userName},'%')
+        </if>
+       <if test="userRole!=null and userRole!=''">
+           AND u.`userRole`=#{userRole}
+       </if>
+        ORDER BY creationDate DESC
+        LIMIT #{from},#{pageSize};
+
+    </select>
+
+
+    <resultMap id="rm1" type="User">
+        <result property="userRoleName" column="roleName"/>
+    </resultMap>
+
+    <!--获得用户的总记录数-->
+    <select id="getUserCount" resultType="int">
+        select count(1) from smbms_user
+    </select>
+
+    <!--获得用户总记录数:通过用户姓名和用户角色-->
+    <select id="getUserCountByUserNameAndUserRole" resultType="int">
+        select count(1) from smbms_user
+        <where>
+            <if test="userName!=null and userName!=''">  userName like CONCAT('%',#{userName},'%')</if>
+            <if test="userRole!=null and userRole!=''">and userRole =#{userRole}</if>
+       </where>
+    </select>
+
+    <!--添加用户-->
+    <insert id="addUser" parameterType="User">
+        insert into smbms_user(userCode,userName,userPassword,gender,birthday,phone,address,userRole,idPicPath,createdBy,creationDate)
+        values(#{userCode},#{userName},#{userPassword},#{gender},#{birthday},#{phone},#{address},#{userRole},#{idPicPath},#{createdBy},#{creationDate})
+    </insert>
+
+    <!--根据用户id，获得用户-->
+    <select id="getUserById" parameterType="Integer" resultMap="rm1">
+        select u.*,r.roleName
+        from smbms_user u,smbms_role r
+        where u.userRole =r.id
+        and u.id =#{id}
+    </select>
+
+    <!--提交修改表单-->
+    <update id="modifyByUser" parameterType="User">
+        UPDATE smbms_user
+        SET userName=#{userName},gender=#{gender},birthday=#{birthday},phone=#{phone},address=#{address},userRole=#{userRole},modifyBy=#{modifyBy},modifyDate=#{modifyDate}
+        WHERE id=#{id}
+    </update>
+
+    <!--删除用户-->
+    <delete id="deleteUserById" parameterType="Integer">
+        delete from smbms_user
+        where id = #{id}
+    </delete>
+
+
+    <!--密码修改-->
+    <update id="modifyPassword" parameterType="User">
+        UPDATE smbms_user
+        SET userPassword = #{userPassword}
+        WHERE id=#{id}
+    </update>
+
+</mapper>
