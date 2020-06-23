@@ -3,10 +3,30 @@
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
       <artifact name="ssm_smbms_maven:war exploded" />
+      <artifact name="ssm_smbms_maven:war exploded" />
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7ead189d-b120-499c-9ad8-17e334afd11e" name="Default Changelist" comment="" />
+    <list default="true" id="7ead189d-b120-499c-9ad8-17e334afd11e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/smbms/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/smbms/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/smbms/controller/user/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/foot.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/foot.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/common/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frame.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/frame.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/pwdmodify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/jsp/pwdmodify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/cn/smbms/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/cn/smbms/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/classes/cn/smbms/controller/user/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/classes/cn/smbms/controller/user/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/common/foot.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/common/foot.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/common/head.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/common/head.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/frame.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/frame.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/login.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/pwdmodify.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/jsp/pwdmodify.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/supermarket-dianshang/WEB-INF/web.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +36,9 @@
   <component name="DefaultGradleProjectSettings">
     <option name="testRunner" value="GRADLE" />
     <option name="delegatedBuild" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -40,9 +63,10 @@
   </component>
   <component name="ProjectId" id="1dd72blNpRNt3zGNbcSM6DxZev3" />
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/statics/images" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -65,11 +89,11 @@
       <recent name="cn.smbms.tools" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\IdeaProjects\ssm_smbms_maven\src\main\webapp\statics\images" />
       <recent name="C:\Users\admin\Desktop\ssm_smbms_maven\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\admin\Desktop\ssm_smbms_maven\src\main\java\cn\smbms" />
       <recent name="C:\Users\ww\ssm_smbms_maven\src\main\webapp\WEB-INF" />
       <recent name="C:\Users\ww\ssm_smbms_maven\src\main\webapp" />
-      <recent name="C:\Users\ww\ssm_smbms_maven\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -177,10 +201,30 @@
       <workItem from="1592742918007" duration="700000" />
       <workItem from="1592743638211" duration="7408000" />
       <workItem from="1592751186629" duration="356000" />
+      <workItem from="1592784984285" duration="3617000" />
+      <workItem from="1592789630851" duration="19000" />
+      <workItem from="1592789879385" duration="5314000" />
+      <workItem from="1592807641982" duration="616000" />
+      <workItem from="1592809049756" duration="5084000" />
+      <workItem from="1592814618772" duration="778000" />
+      <workItem from="1592872025391" duration="3007000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

@@ -9,6 +9,7 @@
             <div class="providerAdd">
                 <form id="userForm" name="userForm" method="post" action="${pageContext.request.contextPath }/sys/user/modifypassword.html">
                     <input type="hidden" name="method" value="savepwd">
+                    <input type="hidden" name="id" value="${user.id}">
                     <!--div的class 为error是验证错误，ok是验证成功-->
                     <div class="info">${message}</div>
                     <div class="">

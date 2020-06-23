@@ -6,14 +6,14 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>超市订单管理系统</title>
+    <title>永辉超市后台管理系统</title>
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/statics/css/style.css" />
     <link type="text/css" rel="stylesheet" href="${pageContext.request.contextPath }/statics/css/public.css" />
 </head>
 <body>
 <!--头部-->
     <header class="publicHeader">
-        <h1>超市订单管理系统</h1>
+        <h1>永辉超市后台管理系统</h1>
         <div class="publicHeaderR">
             <p><span>下午好！</span><span style="color: #fff21b"> ${userSession.userName }</span> , 欢迎你！</p>
             <a href="${pageContext.request.contextPath }/logout.html">退出</a>
@@ -34,7 +34,7 @@
               <li><a href="${pageContext.request.contextPath }/sys/provider/providerlist.html?method=query">供应商管理</a></li>
               <li><a href="${pageContext.request.contextPath }/sys/user/userlist.html">用户管理</a></li>
               <li><a href="${pageContext.request.contextPath }/sys/user/pwdmodify.html">密码修改</a></li>
-              <li><a href="${pageContext.request.contextPath }/sys/user/logout.html">退出系统</a></li>
+              <li><a href="${pageContext.request.contextPath }/user/logout.html">退出系统</a></li>
              </ul>
          </nav>
      </div>

@@ -15,9 +15,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.apache.log4j.Logger;
+
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 
@@ -298,30 +301,38 @@ public class UserController {
         return "/pwdmodify";
     }
 
-
     /**
      * 实现密码修改功能
      * @param session
-     * @param oldpassword
+     * @param user
+     * @param model
+     * @param oldPassword
      * @param newPassword
-     * @param rnewpassword
-     * @return
+     * @param rnewPassword
+     * @return /login
      */
     @RequestMapping("/modifypassword.html")
     public String modifyPassword(HttpSession session,
-                                 @RequestParam("oldpassword") String oldpassword,
+                                 User user,
+                                 Model model,
+                                 @RequestParam("oldpassword") String oldPassword,
                                  @RequestParam("newpassword") String newPassword,
-                                 @RequestParam("rnewpassword") String rnewpassword) {
+                                 @RequestParam("rnewpassword") String rnewPassword) {
         logger.debug("enter UserController---》modifyPassword method");
 
-        User user = new User();
         User loginUser = (User) session.getAttribute(Constants.USER_SESSION);
         user.setId(loginUser.getId());
         user.setUserPassword(newPassword);
-        //判断旧密码是否正确，两次新密码输入是否一样
-        if (oldpassword != loginUser.getUserPassword() && newPassword != rnewpassword) {
-                return "/pwdmodify";
-        }else{
+        if (!loginUser.getUserPassword().equals(oldPassword) ) {
+            model.addAttribute("message", "抱歉您输入的旧密码错误，请重新输入");
+            return "/pwdmodify";
+        }else if (!newPassword.equals(rnewPassword)){
+            model.addAttribute("message", "抱歉您输入的两次新密码不一致，请重新输入");
+            return "/pwdmodify";
+        }else if(loginUser.getUserPassword().equals(newPassword)){
+            model.addAttribute("message", "抱歉您输入的旧密码和新密码一样，请重新输入");
+            return "/pwdmodify";
+        } else {
             Integer count = this.userService.modifyPassword(user);
             logger.debug("leave UserController---》modifyPassword method");
             if (count > 0) {
