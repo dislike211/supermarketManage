@@ -7,9 +7,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-/**
- * @Author: 四两数字先生（公众号/CSDN）
- */
 public class SysInterceptor extends HandlerInterceptorAdapter {
 
     //预处理 pre 之前 调用处理器之前执行的方法
